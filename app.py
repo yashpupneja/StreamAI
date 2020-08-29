@@ -10,20 +10,14 @@ import Css
 
 def main():
 	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """
-
-	
 	Css.local_css("style.css")
 	Css.side_background()
 
-	Html.html_heading()
-	st.markdown(Html.html_heading(), unsafe_allow_html = True)
-	st.text("")
-
-
 	choice = st.sidebar.selectbox("Select Activity", ["About", "Applications", "Blogs"])
 
-
 	if choice == 'About':
+		Html.html_heading()
+		st.markdown(Html.html_heading(), unsafe_allow_html = True)
 		components.html(Html.html_about(), height=1000)
 
 	elif choice == 'Applications':
