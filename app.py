@@ -13,7 +13,6 @@ def main():
 
 	
 	Css.local_css("style.css")
-	Css.remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 	Css.side_background()
 
 	Html.html_heading()
