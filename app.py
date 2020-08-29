@@ -3,100 +3,96 @@ import streamlit as st
 #Component Pkgs
 import streamlit.components.v1 as components 
 
+#Pkgs - Files
+import Html
+import Css
 
-#Custom Footer
-header = """
-	 <!-- CSS  -->
-	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	 <footer class="page-footer grey darken-4">
-	    <div class="container" id="aboutapp">
-	      <div class="row">
-	        <div class="col l6 s12">
-	          <h5 class="white-text">About</h5>
-	          <p class="grey-text text-lighten-4">
-	          StreamAI app involves the combination of several domains of artificial intelligence like Natural Language Processing, Computer Vision, Data Science etc. on a single platform. <br>
-	          The app aims at making it feasible to use various functionalities of AI from a single application rather than from various different applications intended for different functionalities.
-			  Technologies, Libraries used:<br>
-			  <i><ol><li> Python for coding </li> <li> Streamlit for UI.</li>
-			  <li>Python Libraries: NumPy, Matplotlib, OpenCV, Pandas, Pillow, Scikit-Learn, Joblib, Spacy, BioPython, NeatBio, Pandas Profiling, Sweetviz</li></ol></i></p>
-	        </div>
-	      
-	   <div class="col l3 s12">
-	          <h5 class="white-text">Connect With Us</h5>
-	          <ul>
-	          <a href="https://gh.linkedin.com/in/srishtii24" target="_blank" class="white-text">
-	            <i class="fab fa-linkedin fa-4x"></i>
-	          </a>	         
-	           <a href="https://github.com/srishtii24/" target="_blank" class="white-text">
-	            <i class="fab fa-github-square fa-4x"></i>
-	          </a>
-	          </ul>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="footer-copyright">
-	      <div class="container">
-	      Made by <p class="white-text text-lighten-3">Srishti Gupta and Yashaswi Pupneja</p><br/>
-	      </div>
-	    </div>
-	  </footer>
-	"""
-# Loading of css files
-def local_css(file_name):
-	with open(file_name) as f:
-		st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-def remote_css(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
 
 def main():
-	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """    
-	local_css("style.css")
-	remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """
+
 	
-	# sidebar background settings
-	st.markdown(
-    	"""
-		<style>.sidebar .sidebar-content {
-    	background-image: linear-gradient(#e1b382,#c89666);
-    	color: white;
-		}
-		</style>
-		""",
-    unsafe_allow_html=True,)
+	Css.local_css("style.css")
+	Css.remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+	Css.side_background()
 
-	st.sidebar.title("StreamAI")
+	Html.html_heading()
+	st.markdown(Html.html_heading(), unsafe_allow_html = True)
+	st.text("")
 
-	activities = ["About","Category","Blogs"]
-	choice = st.sidebar.selectbox("Select Activity", activities)
 
-	# Category Tab 
-	if choice == 'Category':
-		categories = ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization/Data Science"]
+	choice = st.sidebar.selectbox("Select Activity", ["About", "Applications", "Blogs"])
+
+
+	if choice == 'About':
+		components.html(Html.html_about(), height=1000)
+
+	elif choice == 'Applications':
+		categories = ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization", "Generative Models"]
 		category_choice = st.sidebar.radio("Pick a Domain",categories)
-		if category_choice=="Natural Language Processing":
-			nlp_algo=["Named Entity Detection","Part-of-speech Tagging","Sentimental Detection","Question Answering"]
-			nlp=st.sidebar.radio("Algorithm:",nlp_algo)
-		elif category_choice=='Computer Vision':
-			cv_algo=["Detection","Cannize","Cartonize","Semantic Segmentation"]
-			cv=st.sidebar.radio("Algorithm:",cv_algo)
-			if cv=="Detection":
-				detect_choice=["Face","Smile","Eyes","Style","Pose","Object"]
-				detect=st.sidebar.selectbox("Detection of : ",detect_choice)
 
-	# About Tab
-	elif choice == 'About':
-		html_temp = """
-		<div style = "background-color:tomato; padding:15px;">
-		<h1><center> StreamAI</center></h1>
-		</div>
-		"""
+		if category_choice == "Natural Language Processing":
+			apps_nlp = st.sidebar.radio("Algorithm",('Named Entity Recognition', 'Part-of-Speech Tagging', 'Sentiment Detection', 'Question Answering'))
+			if apps_nlp == 'Named Entity Recognition':
+				st.success("NLP: Named Entity Recognition App")
 
-		st.markdown(html_temp, unsafe_allow_html = True)
+			elif apps_nlp == 'Part-of-Speech Tagging':
+				st.success("NLP: Part-of-Speech Tagging App")
 
-		components.html(header, height=1000)
+			elif apps_nlp == 'Sentiment Detection':
+				st.success("NLP: Sentiment Detection App")
+
+			elif apps_nlp == 'Question Answering':
+				st.success("NLP: Question Answering App")
+
+		elif category_choice == 'Computer Vision':
+			apps_cv = st.sidebar.radio("Algorithm",['Face Detection', 'Eyes Detection','Smile Detection','Cannize','Cartoonize','Style Detection','Pose Detection', 'Semantic Segmentation', 'Object Detection'])
+			if apps_cv == 'Face Detection':
+				st.success("CV: Face Detection App")
+
+			elif apps_cv == 'Eyes Detection':
+				st.success("CV: Eyes Detection App")
+
+			elif apps_cv == 'Smile Detection':
+				st.success("CV: Smile Detection App")
+
+			elif apps_cv == 'Style Detection':
+				st.success("CV: Style Detection App")
+
+			elif apps_cv == 'Cannize':
+				st.success("CV: Cannizing an Image App")
+
+			elif apps_cv == 'Cartoonize':
+				st.success("CV: Cartoonizing an Image App")
+
+			elif apps_cv == 'Pose Detection':
+				st.success("CV: Pose Detection App")
+
+			elif apps_cv == 'Semantic Segmentation':
+				st.success("CV: Semantic Segmentation App")
+
+			elif apps_cv == 'Object Detection':
+				st.success("CV: Object Detection App")
+
+
+
+		elif category_choice == 'Speech Processing':
+			apps_sp = st.sidebar.radio("Algorithm",['Voice Based Gender Detection'])
+			if apps_sp == 'Voice Based Gender Detection':
+				st.success("SP: Voice Based Gender Detection App")
+
+
+		elif category_choice == 'Data Visualization':
+			apps_ds = st.sidebar.radio("Algorithm",['DataSet Explorer'])
+			if apps_ds == 'DataSet Explorer':
+				st.success("DS: DataSet Explorer App")
+
+		elif category_choice == 'Generative Models':
+			pass
+
+
+	elif choice == 'Blogs':
+		pass
 
 
 
