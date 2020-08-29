@@ -44,15 +44,18 @@ header = """
 	    </div>
 	  </footer>
 	"""
+# Loading of css files
 def local_css(file_name):
 	with open(file_name) as f:
 		st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 def remote_css(url):
     st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
+
 def main():
 	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """    
 	local_css("style.css")
 	remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+	
 	# sidebar background settings
 	st.markdown(
     	"""
@@ -66,9 +69,10 @@ def main():
 
 	st.sidebar.title("StreamAI")
 
-	activities = ["Category", "About","Blogs"]
+	activities = ["About","Category","Blogs"]
 	choice = st.sidebar.selectbox("Select Activity", activities)
 
+	# Category Tab 
 	if choice == 'Category':
 		categories = ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization/Data Science"]
 		category_choice = st.sidebar.radio("Pick a Domain",categories)
@@ -82,7 +86,7 @@ def main():
 				detect_choice=["Face","Smile","Eyes","Style","Pose","Object"]
 				detect=st.sidebar.selectbox("Detection of : ",detect_choice)
 
-	
+	# About Tab
 	elif choice == 'About':
 		html_temp = """
 		<div style = "background-color:tomato; padding:15px;">
