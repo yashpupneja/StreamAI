@@ -1,7 +1,7 @@
 # Core packages
 import streamlit as st
 import cv2
-from pil import Image,ImageEnhance
+from PIL import Image,ImageEnhance
 import numpy as np
 import os
 import warnings
@@ -21,9 +21,9 @@ def main():
 	choice = st.selectbox("Select Activity: ",activities)
 	if(choice=='Contrast Type'):
 		#st.subheader("")
-		image_file=st.file_uploader("Upload Image",type=['jpg','png','jpeg'])
 		warnings.filterwarnings('ignore')
 		st.set_option('deprecation.showfileUploaderEncoding', False)
+		image_file=st.file_uploader("Upload Image",type=['jpg','png','jpeg'])
 		if image_file is not None:
 			our_image = Image.open(image_file)
 			st.text("Original Image")
