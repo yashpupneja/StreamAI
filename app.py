@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 #Pkgs - Files
 import Html
 import Css
-import imagecontrast, CV_face
+import imagecontrast, CV_face, CV_smile, CV_eyes, CV_cannize
 
 def main():
 	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """
@@ -47,16 +47,16 @@ def main():
 				CV_face.face_main()
 
 			elif apps_cv == 'Eyes Detection':
-				st.success("CV: Eyes Detection App")
+				CV_eyes.eyes_main()
 
 			elif apps_cv == 'Smile Detection':
-				st.success("CV: Smile Detection App")
+				CV_smile.smiles_main()
 
 			elif apps_cv == 'Style Detection':
 				st.success("CV: Style Detection App")
 
 			elif apps_cv == 'Cannize':
-				st.success("CV: Cannizing an Image App")
+				CV_cannize.cannize_main()
 
 			elif apps_cv == 'Cartoonize':
 				st.success("CV: Cartoonizing an Image App")
