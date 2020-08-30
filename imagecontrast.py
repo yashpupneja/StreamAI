@@ -15,12 +15,12 @@ def load_image(img):
 def main():
 	"""Face Detection App"""
 
-	st.title("Face Detection App")
+	st.title("Image Constraction App")
 	st.text("Build with streamlit and opencv")
-	activities=["Detection","About"]
+	activities=["Contrast Type","About"]
 	choice = st.selectbox("Select Activity: ",activities)
-	if(choice=='Detection'):
-		st.subheader("Face Detection")
+	if(choice=='Contrast Type'):
+		#st.subheader("")
 		image_file=st.file_uploader("Upload Image",type=['jpg','png','jpeg'])
 		warnings.filterwarnings('ignore')
 		st.set_option('deprecation.showfileUploaderEncoding', False)

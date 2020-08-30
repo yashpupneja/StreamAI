@@ -5,9 +5,9 @@ body {
 
 .stButton>button {
     color:  #2d545e;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     height: 3em;
-    width: 3em;
+    width: 5em;
 }
 
 .stTextInput>div>div>input {
