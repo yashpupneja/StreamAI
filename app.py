@@ -6,6 +6,7 @@ import streamlit.components.v1 as components
 #Pkgs - Files
 import Html
 import Css
+import imagecontrast
 
 
 def main():
@@ -39,7 +40,9 @@ def main():
 				st.success("NLP: Question Answering App")
 
 		elif category_choice == 'Computer Vision':
-			apps_cv = st.sidebar.radio("Algorithm",['Face Detection', 'Eyes Detection','Smile Detection','Cannize','Cartoonize','Style Detection','Pose Detection', 'Semantic Segmentation', 'Object Detection'])
+			apps_cv = st.sidebar.radio("Algorithm",['Image Contrasting','Face Detection', 'Eyes Detection','Smile Detection','Cannize','Cartoonize','Style Detection','Pose Detection', 'Semantic Segmentation', 'Object Detection'])
+			if apps_cv == 'Image Contrasting':
+				imagecontrast.main()
 			if apps_cv == 'Face Detection':
 				st.success("CV: Face Detection App")
 
