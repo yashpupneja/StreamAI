@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
+from pil import Image
 
 face_cascade = cv2.CascadeClassifier('frecog/haarcascade_frontalface_default.xml')
 
@@ -16,7 +16,6 @@ def detect_faces(our_image):
 	plt.figure(figsize = (12,8))
 	plt.imshow(our_image)
 	st.pyplot()
-
 
 	scaleFactor = st.sidebar.slider("Scale Factor", 1.02,1.15,1.1,0.01)
 	minNeighbors = st.sidebar.slider("Number of neighbors", 1, 15, 5, 1)
@@ -34,9 +33,9 @@ def detect_faces(our_image):
 	plt.imshow(gray, cmap = 'gray')
 	st.pyplot()
 	if len(faces)>1:
-		st.success("Found {} faces".format(len(faces)))
+		st.subheader("Found {} faces".format(len(faces)))
 	else:
-		st.success("Found {} face".format(len(faces)))
+		st.subheader("Found {} face".format(len(faces)))
 
 
 

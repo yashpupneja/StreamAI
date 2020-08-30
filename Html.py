@@ -24,8 +24,8 @@ def html_about():
 		          <ul>
 		          <a href="https://gh.linkedin.com/in/srishtii24" target="_blank" class="white-text">
 		            <i class="fab fa-linkedin fa-4x"></i>
-			  <a href="https://github.com/yashaswipupneja/" target="_blank" class="white-text">
-		            <i class="fab fa-github-square fa-4x"></i>
+			  	  <a href="https://gh.linkedin.com/in/yashaswipupneja/" target="_blank" class="white-text">
+		            <i class="fab fa-linkedin fa-4x"></i>
 		          </a>
 		          </a>	         
 		           <a href="https://github.com/srishtii24/" target="_blank" class="white-text">
