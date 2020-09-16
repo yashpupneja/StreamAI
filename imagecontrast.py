@@ -1,7 +1,7 @@
 # Core packages
 import streamlit as st
 import cv2
-from PIL import Image,ImageEnhance
+from pil import Image,ImageEnhance
 import numpy as np
 import os
 import warnings
