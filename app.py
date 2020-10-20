@@ -6,7 +6,9 @@ import streamlit.components.v1 as components
 #Pkgs - Files
 import Html
 import Css
-import imagecontrast, CV_face, CV_smile, CV_eyes, CV_cannize, CV_cartoonize,cv_pose1
+import imagecontrast, CV_face, CV_smile, CV_eyes, CV_cannize, CV_cartoonize, CV_object, CV_Pose
+import DS_pandas_profiling, DS_EDA_App
+import NLP_NER, NLP_pos
 
 def main():
 	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """
@@ -27,10 +29,10 @@ def main():
 		if category_choice == "Natural Language Processing":
 			apps_nlp = st.sidebar.radio("Algorithm",('Named Entity Recognition', 'Part-of-Speech Tagging', 'Sentiment Detection', 'Question Answering'))
 			if apps_nlp == 'Named Entity Recognition':
-				st.success("NLP: Named Entity Recognition App")
+				NLP_NER.main()
 
 			elif apps_nlp == 'Part-of-Speech Tagging':
-				st.success("NLP: Part-of-Speech Tagging App")
+				NLP_pos.main()
 
 			elif apps_nlp == 'Sentiment Detection':
 				st.success("NLP: Sentiment Detection App")
@@ -62,13 +64,13 @@ def main():
 				CV_cartoonize.cartoonize_main()
 
 			elif apps_cv == 'Pose Detection':
-				cv_pose1.main()
+				CV_Pose.main()
 
 			elif apps_cv == 'Semantic Segmentation':
 				st.success("CV: Semantic Segmentation App")
 
 			elif apps_cv == 'Object Detection':
-				st.success("CV: Object Detection App")
+				CV_object.object_main()
 
 
 
@@ -79,9 +81,11 @@ def main():
 
 
 		elif category_choice == 'Data Visualization':
-			apps_ds = st.sidebar.radio("Algorithm",['DataSet Explorer'])
+			apps_ds = st.sidebar.radio("Algorithm",['DataSet Explorer', 'EDA of Iris DataSet'])
 			if apps_ds == 'DataSet Explorer':
-				st.success("DS: DataSet Explorer App")
+				DS_pandas_profiling.main()
+			elif apps_ds == 'EDA of Iris DataSet':
+				DS_EDA_App.main()
 
 		elif category_choice == 'Generative Models':
 			pass

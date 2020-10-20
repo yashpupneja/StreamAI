@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from pil import Image
+from PIL import Image
 
 eye_cascade = cv2.CascadeClassifier('frecog/haarcascade_eye.xml')
 
@@ -57,7 +57,7 @@ def eyes_main():
 			detect_eyes(our_image)
 			
 	elif choice == "Show Demo":
-		our_image = Image.open("images/smiling.jpg")
+		our_image = Image.open("images/girl_image.jpg")
 		detect_eyes(our_image)
 
 

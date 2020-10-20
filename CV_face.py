@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from pil import Image
+from PIL import Image
 
 face_cascade = cv2.CascadeClassifier('frecog/haarcascade_frontalface_default.xml')
 
