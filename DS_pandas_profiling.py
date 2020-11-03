@@ -38,7 +38,7 @@ def main():
 			st_profile_report(profile)
 
 	elif choice == "Sweetviz":
-		st.subheader("Automated Exploratory Data Analsis (with Sweetviz)")
+		st.subheader("Automated Exploratory Data Analysis (with Sweetviz)")
 		st.write("Sweetviz is an open source Python library that generates beautiful, high-density visualizations to kickstart EDA (Exploratory Data Analysis). Output is a fully self-contained HTML application.The system is built around quickly visualizing target values and comparing datasets. Its goal is to help quick analysis of target characteristics, training vs testing data, and other such data characterization tasks.")
 		data_file = st.file_uploader("Upload CSV", type = ['csv'])
 		st.set_option('deprecation.showfileUploaderEncoding', False)

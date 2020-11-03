@@ -54,3 +54,60 @@ def html_heading():
 		</div>
 		"""
 	return html_temp
+
+def blog_cv():
+	cv = """
+	<!--CSS-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		
+		    
+		    <div class="row">
+		        <div class="col s12">
+					<a href="https://hashnode.com/preview/5f97df2a83b4c0275824b794" target = "_blank" class="white-text">
+					<center> 
+					<img border="0" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1603974251162/iF_dH1qmG.gif" width="600" height="300"><br>
+					FACE DETECTION </center>
+					</a>
+				</div>
+			</div>
+
+
+			<div class="row">
+		        <div class="col s12">
+					<a href="https://hashnode.com/preview/5f9a5dc41646ee3072b6e2e5" target = "_blank" class="white-text">
+					<center> 
+					<img border="0" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1603997342255/a6c0ofZAG.gif" width="600" height="300"><br>
+					EYES DETECTION </center>
+					</a>
+				</div>
+			</div>
+
+			
+			<div class="row">
+		        <div class="col s12">
+					<a href="https://hashnode.com/preview/5f9aac7ea1658252d1a7b5a6" target = "_blank" class="white-text">
+					<center> 
+					<img border="0" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1603995892721/cO2OTOI2S.gif" width="600" height="300"><br>
+					SMILE DETECTION </center>
+					</a>
+				</div>
+			</div>
+
+
+			<div class="row">
+		        <div class="col s12">
+					<a href="https://hashnode.com/preview/5f99b5b51646ee3072b6db50" target = "_blank" class="white-text">
+					<center> 
+					<img border="0" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1603974717391/c4EG6ibe7.gif" width="600" height="300"><br>
+					OBJECT DETECTION </center>
+					</a>
+				</div>
+			</div>
+
+	"""
+	return cv
+
+

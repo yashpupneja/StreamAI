@@ -3,27 +3,28 @@ import streamlit as st
 #Component Pkgs
 import streamlit.components.v1 as components 
 
+import base64
+
 #Pkgs - Files
 import Html
 import Css
 import imagecontrast, CV_face, CV_smile, CV_eyes, CV_cannize, CV_cartoonize, CV_object, CV_Pose
 import DS_pandas_profiling, DS_EDA_App
-import NLP_NER, NLP_pos
+import NLP_NER, NLP_pos, NLP_sentiment
 
 def main():
 	"""STREAM AI - A Hub for NLP Apps, Computer Vision Apps, Data Science Apps, ML Apps, DL Apps, """
 	Css.local_css("style.css")
 	Css.side_background()
 
-	choice = st.sidebar.selectbox("Select Activity", ["About", "Applications", "Blogs"])
+	choice = st.sidebar.selectbox("Select Activity", ["Home", "Applications", "Blogs", "About"])
 
-	if choice == 'About':
-		Html.html_heading()
-		st.markdown(Html.html_heading(), unsafe_allow_html = True)
-		components.html(Html.html_about(), height=1000)
+	if choice == 'Home':
+		pass
+
 
 	elif choice == 'Applications':
-		categories = ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization", "Generative Models"]
+		categories = ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization"]
 		category_choice = st.sidebar.radio("Pick a Domain",categories)
 
 		if category_choice == "Natural Language Processing":
@@ -35,7 +36,7 @@ def main():
 				NLP_pos.main()
 
 			elif apps_nlp == 'Sentiment Detection':
-				st.success("NLP: Sentiment Detection App")
+				NLP_sentiment.main()
 
 			elif apps_nlp == 'Question Answering':
 				st.success("NLP: Question Answering App")
@@ -87,13 +88,25 @@ def main():
 			elif apps_ds == 'EDA of Iris DataSet':
 				DS_EDA_App.main()
 
-		elif category_choice == 'Generative Models':
-			pass
 
 
 	elif choice == 'Blogs':
-		pass
+		domain = st.sidebar.radio("Select the Domain", ["Natural Language Processing","Computer Vision", "Speech Processing", "Data Visualization"])
+		if domain == "Natural Language Processing":
+			pass
+		elif domain == "Computer Vision":
+			components.html(Html.blog_cv(), height=1000)
+		elif domain == "Speech Processing":
+			pass
+		elif domain == "Data Visualization":
+			pass
 
+
+
+	elif choice == 'About':
+		Html.html_heading()
+		st.markdown(Html.html_heading(), unsafe_allow_html = True)
+		components.html(Html.html_about(), height=1000)
 
 
 if __name__ == '__main__':

@@ -6,6 +6,7 @@ from PIL import Image
 
 
 def detect_objects(our_image):
+	st.set_option('deprecation.showPyplotGlobalUse', False)
 	st.subheader("Original Image")
 	st.text("")
 	plt.figure(figsize = (15,15))

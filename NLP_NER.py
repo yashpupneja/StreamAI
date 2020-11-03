@@ -20,7 +20,7 @@ def get_text(raw_url):
 
 def main():
 	"""A Simple NLP App with Spacy-Streamlit"""
-	st.title("Named Entity Recogintion")
+	st.title("Named Entity Recognition")
 	st.markdown("Named Entity Recognition is the process by which the system identify named entities (persons, organisations, governments, money, etc.) using a mix of deep learning and probabilistic approach. This type of algorithm is generally trained on large corpuses e.g. in wikipedia . We have implemented this algorithm using a state-of-the-art library known as SpaCy. BeautifulSoup is used as a web scrapping tool to extract the text from a URL provided.")
 
 	menu = ["NER", "NER for URL"]

@@ -10,6 +10,7 @@ smile_cascade = cv2.CascadeClassifier('frecog/haarcascade_smile.xml')
 
 
 def detect_smiles(our_image):
+	st.set_option('deprecation.showPyplotGlobalUse', False)
 	new_img = np.array(our_image.convert('RGB'))
 	img = cv2.cvtColor(new_img,1)
 	gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
